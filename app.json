@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c00945fb-518b-4815-8196-34f222f2ce24"
+      }
+    },
+    "owner": "rdiniz"
   }
 }
