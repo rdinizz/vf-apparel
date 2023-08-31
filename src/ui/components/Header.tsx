@@ -4,6 +4,7 @@ import Cart from './Cart';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Filter, FilterTypes } from './Filter';
+import colors from '../../util/constants/colors';
 
 const Header = ({
   renderCart,
@@ -18,7 +19,7 @@ const Header = ({
 
   const renderLeftElement = () => {
     if (renderBackButton) {
-      return (<Ionicons onPress={() => navigation.goBack()} name="arrow-back" size={24} color="black" />)
+      return (<Ionicons onPress={() => navigation.goBack()} name="arrow-back" size={24} color={colors.vfPurple} />)
     } else if (renderFilter) {
       return (<Filter filter={FilterTypes.ascendant}/>)
     }
@@ -54,14 +55,14 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   headerLeftView: {
-    flex: .25,
+    flex: .30,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     overflow: 'visible'
   },
   headerCenterView: {
-    flex: .5,
+    flex: .45,
     justifyContent: 'center',
     borderWidth: 2,
     borderColor: 'rgb(155,132,253)'

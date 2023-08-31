@@ -6,11 +6,14 @@ import {
   StyleSheet,
   FlatList,
   Animated,
+  Platform,
 } from 'react-native';
 import Header from '../components/Header';
 import CartItem from '../components/CartItem';
 import { RootState } from '../../services/redux/store';
 import { useSelector } from 'react-redux';
+import Constants from 'expo-constants';
+import colors from '../../util/constants/colors';
 
 
 const CartScreen: () => JSX.Element = () => {
@@ -69,10 +72,11 @@ export default CartScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(236,232,228)',
+    backgroundColor: colors.vfGrey,
     flex: 1,
+    paddingTop: Platform.OS === 'android' ? Constants.statusBarHeight + 10 : 0,
   },
-  contentView: { flex: 1, justifyContent: 'space-between' },
+  contentView: { flex: 1, justifyContent: 'space-between', },
   totalView: {
     flexDirection: 'row',
     backgroundColor: 'rgb(219,218,221)',
