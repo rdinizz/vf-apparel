@@ -29,7 +29,7 @@ const CartScreen: () => JSX.Element = () => {
       Animated.timing(
         scaleAnim,
         {
-          toValue:1,
+          toValue: 1,
           duration: 250,
           useNativeDriver: true
         }
@@ -47,7 +47,7 @@ const CartScreen: () => JSX.Element = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header renderBackButton />
-      <View style={{ flex: 1, justifyContent: 'space-between' }}>
+      <View style={styles.contentView}>
         <FlatList
           data={cart}
           renderItem={renderCartItem}
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(236,232,228)',
     flex: 1,
   },
+  contentView: { flex: 1, justifyContent: 'space-between' },
   totalView: {
     flexDirection: 'row',
     backgroundColor: 'rgb(219,218,221)',

@@ -25,6 +25,7 @@ export interface ProductVariantData {
 export interface ProductData {
   id: string;
   title: string;
+  price: string;
   variants: [ProductVariantData];
 
 }
@@ -80,7 +81,7 @@ const Product = ({ productData }: { productData: ProductData }) => {
         style={styles.productImage}
         source={imageSource}
       />
-      <Text style={styles.productTitle}>{productData.title}</Text>
+      <Text style={styles.productTitle}>{productData.title + ' $' + productData.price}</Text>
       <TouchableOpacity disabled={isAddedToCart} onPress={onAddToCart}>
         <Animated.View style={[styles.addToCartButton, { transform: [{ scale: scaleAnim }], backgroundColor: isAddedToCart ? 'rgb(93,94,108)' : 'rgb(148,121,255)', }]}>
           <Animated.Text style={[styles.addToCartText, { transform: [{ scale: scaleAnim }] }]}>{isAddedToCart ? 'ADDED TO CART' : 'ADD TO CART'}</Animated.Text>

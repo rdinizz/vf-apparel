@@ -7,8 +7,6 @@ import { removeFromCart } from '../../services/redux/cartSlice';
 
 
 const CartItem = ({ productData }: { productData: ProductData }) => {
-  // since each variant has a position, we get the element with the smaller position number
-  let smallerPositionVariant: ProductVariantData = productData && productData.variants && productData.variants.length > 0 ? productData.variants.filter(variant => variant.position === 1)[0] : {}
   const dispatch = useDispatch()
 
   const animatedValue = React.useRef(new Animated.Value(0)).current;
@@ -37,7 +35,7 @@ const CartItem = ({ productData }: { productData: ProductData }) => {
     <Animated.View style={[styles.cartItem, animateOpacity]}>
       <View style={styles.productNameView}>
         <Text style={styles.productNameText}>{productData.title}</Text>
-        <Text style={styles.priceText}>${smallerPositionVariant.price}</Text>
+        <Text style={styles.priceText}>${productData.price}</Text>
       </View>
       <View style={styles.priceView}>
         <TouchableOpacity onPress={removeCartITem}>
