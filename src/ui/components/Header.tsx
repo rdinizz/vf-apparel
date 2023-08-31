@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Filter, FilterTypes } from './Filter';
 import colors from '../../util/constants/colors';
+import { Platform } from 'react-native';
 
 const Header = ({
   renderCart,
@@ -47,6 +48,8 @@ const styles = StyleSheet.create({
   headerView: {
     flex: 1,
     maxWidth: '85%',
+    minWidth: Platform.OS === 'web' ? 430 : 1,
+    marginTop: Platform.OS === 'web' ? 20 : 0,
     maxHeight: 40,
     marginBottom: 20,
     flexDirection: 'row',

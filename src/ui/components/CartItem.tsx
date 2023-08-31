@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Animated, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ProductData, ProductVariantData } from './Product';
 import { useDispatch } from 'react-redux';
@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
   cartItem: {
     alignSelf: 'center',
     width: '90%',
+    minWidth: Platform.OS === 'web' ? 430 : 1,
+    maxWidth: 430,
     paddingVertical: 20,
     flexDirection: 'row',
     borderBottomWidth: 1,

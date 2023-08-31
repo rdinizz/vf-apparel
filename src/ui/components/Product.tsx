@@ -96,6 +96,7 @@ export default Product;
 const styles = StyleSheet.create({
   productContainer: {
     width: '85%',
+    maxWidth: 430,
     alignSelf: 'center',
     shadowColor: 'rgba(0, 0, 0, 0.2)',
     shadowOffset: {
