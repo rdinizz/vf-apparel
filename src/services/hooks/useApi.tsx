@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ProductData } from '../../ui/components/Product';
 import axios from 'axios';
 
+
 // custom hook example of state management and can be reusable in different components
 const useApi = () => {
   const [data, setData] = useState<any[]>([]);
@@ -15,7 +16,8 @@ const useApi = () => {
     if (loadingRef.current) {
       return;
     }
-    axios.get<any[]>(`http://192.168.1.102:3163/product/getProducts?order=${order}`)
+    const serverURL = process.env.EXPO_PUBLIC_SERVER_URL || '127.0.0.1:3163'
+    axios.get<any[]>(`http://${serverURL}/product/getProducts?order=${order}`)
     .then(response => {
       setData(response.data);
     }).catch(error => console.log(error.message))
