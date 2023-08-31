@@ -16,7 +16,7 @@ const Cart = () => {
       scaleAnim,
       {
         toValue: 1.4,
-        duration: 250,
+        duration: 150,
         useNativeDriver: true
       }
     ).start(() => {
@@ -24,7 +24,7 @@ const Cart = () => {
         scaleAnim,
         {
           toValue:1,
-          duration: 250,
+          duration: 150,
           useNativeDriver: true
         }
       ).start();
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   },
   counterStyle: {
-    fontSize: 18,
+    fontSize: 16,
     color: 'white'
   }
 });

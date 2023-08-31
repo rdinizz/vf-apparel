@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(213,203,199)',
   },
   addToCartButton: {
-
     borderRadius: 6,
     padding: 12,
     paddingVertical: 18,

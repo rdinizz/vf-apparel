@@ -3,19 +3,32 @@ import { View, Text, StyleSheet } from 'react-native';
 import Cart from './Cart';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { Filter, FilterTypes } from './Filter';
 
 const Header = ({
   renderCart,
-  renderBackButton
+  renderBackButton,
+  renderFilter
 }: {
   renderCart?: boolean,
-  renderBackButton?: boolean
+  renderBackButton?: boolean,
+  renderFilter?: boolean
 }) => {
   const navigation = useNavigation()
+
+  const renderLeftElement = () => {
+    if (renderBackButton) {
+      return (<Ionicons onPress={() => navigation.goBack()} name="arrow-back" size={24} color="black" />)
+    } else if (renderFilter) {
+      return (<Filter filter={FilterTypes.ascendant}/>)
+    }
+    return (<></>)
+  }
+
   return (
     <View style={styles.headerView}>
       <View style={styles.headerLeftView} >
-        {renderBackButton && <Ionicons onPress={() => navigation.goBack()} name="arrow-back" size={24} color="black" />}
+        {renderLeftElement()}
       </View>
       <View style={styles.headerCenterView}>
         <Text style={styles.headerText}>VF-APPAREL CO</Text>
@@ -37,12 +50,15 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flexDirection: 'row',
     alignSelf: 'center',
+    overflow: 'visible',
+    zIndex: 2,
   },
   headerLeftView: {
     flex: .25,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    overflow: 'visible'
   },
   headerCenterView: {
     flex: .5,

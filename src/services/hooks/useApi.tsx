@@ -6,7 +6,7 @@ const useApi = () => {
   const [data, setData] = useState<any[]>([]);
   const [page, setPage] = useState(0);
   // for demonstration purposes, the types of filtering accepted are: default, ascendant, descendant, lowestToHighest, highestToLowest
-  const [order, setOrder] = useState('lowestToHighest');
+  const [order, setOrder] = useState('default');
   const [loading, setLoading] = useState(false);
   const loadingRef = useRef(loading);
   loadingRef.current = loading;
@@ -17,7 +17,6 @@ const useApi = () => {
     }
     axios.get<any[]>(`http://127.0.0.1:3163/product/getProducts?order=${order}`)
     .then(response => {
-      console.log(response.data)
       setData(response.data);
     }).catch(error => console.log(error.message))
   }, [order]);
