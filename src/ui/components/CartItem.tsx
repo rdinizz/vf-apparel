@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ProductData, ProductVariantData } from './Product';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../../services/redux/cartSlice';
+import colors from '../../util/constants/colors';
 
 
 const CartItem = ({ productData }: { productData: ProductData }) => {
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderColor: 'rgb(221,214,210)',
+    borderColor: colors.cartItemBorder,
   },
   productNameView: {
     flex: 1,
@@ -92,9 +93,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 6,
-    // backgroundColor: 'rgb(155,132,253)',
-    backgroundColor: 'rgb(93,94,108)',
-    shadowColor: 'rgba(0,0,0, 0.3)',
+    backgroundColor: colors.vfDarkGrey,
+    shadowColor: colors.black03,
     shadowOffset: {
       width: 0,
       height: 10,

@@ -4,9 +4,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../services/redux/cartSlice';
 import { RootState } from '../../services/redux/store';
-import useColorAnimation from '../../services/hooks/useColorAnimation';
-const { height, width } = Dimensions.get('window');
 import tshirt from '../../../assets/tshirt.png'
+import colors from '../../util/constants/colors';
+const { height, width } = Dimensions.get('window');
 
 interface FeaturedImageData {
   id: string;
@@ -83,7 +83,7 @@ const Product = ({ productData }: { productData: ProductData }) => {
       />
       <Text style={styles.productTitle}>{productData.title + ' $' + productData.price}</Text>
       <TouchableOpacity disabled={isAddedToCart} onPress={onAddToCart}>
-        <Animated.View style={[styles.addToCartButton, { transform: [{ scale: scaleAnim }], backgroundColor: isAddedToCart ? 'rgb(93,94,108)' : 'rgb(148,121,255)', }]}>
+        <Animated.View style={[styles.addToCartButton, { transform: [{ scale: scaleAnim }], backgroundColor: isAddedToCart ? colors.vfDarkGrey : colors.vfPurple, }]}>
           <Animated.Text style={[styles.addToCartText, { transform: [{ scale: scaleAnim }] }]}>{isAddedToCart ? 'ADDED TO CART' : 'ADD TO CART'}</Animated.Text>
         </Animated.View>
       </TouchableOpacity>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     width: '85%',
     maxWidth: 430,
     alignSelf: 'center',
-    shadowColor: 'rgba(0, 0, 0, 0.2)',
+    shadowColor: colors.black02,
     shadowOffset: {
       width: 0,
       height: 10,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: 'rgb(213,203,199)',
+    borderColor: colors.productBorder,
   },
   addToCartButton: {
     borderRadius: 6,

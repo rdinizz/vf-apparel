@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     flex: .45,
     justifyContent: 'center',
     borderWidth: 2,
-    borderColor: 'rgb(155,132,253)'
+    borderColor: colors.vfPurple
 
   },
   headerRightView: {
@@ -81,6 +81,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 16,
-    color: 'rgb(106,107,119)'
+    color: colors.textGrey,
   }
 });

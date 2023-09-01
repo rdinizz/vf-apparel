@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, FlatList, Platform } from 'react-native';
 import Constants from 'expo-constants';
-import { StatusBarHeight } from '../../util/dimensions';
-import useApi from '../../services/hooks/useApi';
-import Product, { ProductData } from '../components/Product';
-import Header from '../components/Header';
+import { StatusBarHeight } from '../../../util/dimensions';
+import useApi from '../../../services/hooks/useApi';
+import Product, { ProductData } from '../../components/Product';
+import Header from '../../components/Header';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../services/redux/store';
-import colors from '../../util/constants/colors';
+import { RootState } from '../../../services/redux/store';
+import styles from './HomeStyles'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
@@ -42,20 +42,3 @@ const HomeScreen = () => {
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.vfGrey,
-    overflow: 'visible'
-  },
-  listStyle: { flex: 1, width: '100%' },
-  listContentContainerStyle: { paddingBottom: 30, },
-  contentView: {
-    flex: 1,
-    alignItems: 'center',
-    marginTop: Platform.OS === 'android' ? 20 : 0,
-    overflow: 'visible',
-    zIndex: 1,
-    backgroundColor: 'transparent'
-  },
-});

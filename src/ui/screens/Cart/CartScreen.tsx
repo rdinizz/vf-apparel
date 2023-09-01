@@ -8,12 +8,12 @@ import {
   Animated,
   Platform,
 } from 'react-native';
-import Header from '../components/Header';
-import CartItem from '../components/CartItem';
-import { RootState } from '../../services/redux/store';
+import Header from '../../components/Header';
+import CartItem from '../../components/CartItem';
+import { RootState } from '../../../services/redux/store';
 import { useSelector } from 'react-redux';
 import Constants from 'expo-constants';
-import colors from '../../util/constants/colors';
+import colors from '../../../util/constants/colors';
 
 
 const CartScreen: () => JSX.Element = () => {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   contentView: { flex: 1, justifyContent: 'space-between', },
   totalView: {
     flexDirection: 'row',
-    backgroundColor: 'rgb(219,218,221)',
+    backgroundColor: colors.vfGreyish,
     borderRadius: 6,
     justifyContent: 'space-between',
     alignItems: 'center',

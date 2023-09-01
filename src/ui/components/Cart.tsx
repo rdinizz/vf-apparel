@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../services/redux/store';
+import colors from '../../util/constants/colors';
 
 
 
@@ -54,9 +55,8 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    // backgroundColor: 'rgb(155,132,253)',
-    backgroundColor: 'rgb(155,132,253)',
-    shadowColor: 'rgba(0,0,0, 0.3)',
+    backgroundColor: colors.vfPurple,
+    shadowColor: colors.black03,
     shadowOffset: {
       width: 0,
       height: 10,

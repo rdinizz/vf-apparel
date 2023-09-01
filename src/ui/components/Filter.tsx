@@ -65,7 +65,7 @@ export const Filter = ({ filter }: { filter: FilterTypes }) => {
         alignItems: 'center',
         backgroundColor: colors.vfGrey,
         borderWidth: 0,
-        shadowColor: 'rgba(0, 0, 0, 0.2)',
+        shadowColor: colors.black02,
         shadowOffset: {
           width: 0,
           height: 10,
